@@ -167,19 +167,19 @@ const Dashboard = () => {
       <div className="space-y-8 px-6 py-8 md:px-10 md:py-10">
         {/* KPIs */}
         <div className="grid gap-4 md:grid-cols-4">
-          <Stat label="Contratos activos" value={contratosActivosCount}
+          <Stat label="Sub Contratos activos" value={contratosActivosCount}
             sub={`de ${contratos.length} totales · SIPOC 3-5`} icon={Briefcase} onClick={() => setDetail("contratos")} />
-          <Stat label="Proyectos en curso" value={proyectosEnCursoCount}
+          <Stat label="Sub Proyectos en curso" value={proyectosEnCursoCount}
             sub={`${proyectos.length} totales`} icon={TrendingUp} onClick={() => setDetail("enCurso")} />
-          <Stat label="Proyectos sin avance" value={proyectosSinAvanceCount} sub="Sin registro hace 8+ días" icon={AlertTriangle} onClick={() => setDetail("sinAvance")} />
-          <Stat label="Proyectos en riesgo" value={risks.length} sub="Marcados como riesgo" icon={AlertTriangle} onClick={() => setDetail("riesgo")} />
+          <Stat label="Sub Proyectos sin avance" value={proyectosSinAvanceCount} sub="Sin registro hace 8+ días" icon={AlertTriangle} onClick={() => setDetail("sinAvance")} />
+          <Stat label="Sub Proyectos en riesgo" value={risks.length} sub="Marcados como riesgo" icon={AlertTriangle} onClick={() => setDetail("riesgo")} />
         </div>
 
         {/* Estatus + Atención */}
         <div className="grid gap-6 lg:grid-cols-2">
           <Card className="p-6">
             <p className="eyebrow">Estatus</p>
-            <h3 className="display mt-2 text-xl">Proyectos</h3>
+            <h3 className="display mt-2 text-xl">Sub Proyectos</h3>
             <div className="mt-4 h-56">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={projectStatusData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
@@ -227,7 +227,7 @@ const Dashboard = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="eyebrow">Atención</p>
-                <h3 className="display mt-2 text-xl">Proyectos en riesgo</h3>
+                <h3 className="display mt-2 text-xl">Sub proyectos en riesgo</h3>
               </div>
               <Badge variant="outline" className="gap-1 border-destructive/30 text-destructive">
                 <AlertTriangle className="h-3 w-3" /> {risks.length}
@@ -255,7 +255,7 @@ const Dashboard = () => {
         <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
           <Card className="p-6">
             <p className="eyebrow">Avance</p>
-            <h3 className="display mt-2 text-xl">Proyectos · estado actual</h3>
+            <h3 className="display mt-2 text-xl">Sub Proyectos · Estado Actual</h3>
             <div className="mt-5 grid gap-4">
               {proyectos.map((p) => {
                 const lp = latest.get(p.id);
@@ -309,7 +309,7 @@ const Dashboard = () => {
 
             <Card className="p-6">
               <p className="eyebrow">Distribución</p>
-              <h3 className="display mt-2 text-xl">Contratos por paso SIPOC</h3>
+              <h3 className="display mt-2 text-xl">Proyectos por paso SIPOC</h3>
               <div className="mt-6" style={{ height: Math.max(220, sipocData.length * 44) }}>
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={sipocData} layout="vertical" margin={{ top: 10, right: 20, left: 10, bottom: 0 }}>
