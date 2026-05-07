@@ -171,7 +171,7 @@ const Contratos = () => {
     <div className="animate-fade-in">
       <PageHeader
         eyebrow="Tablero"
-        title="Contratos por etapa SIPOC"
+        title="Proyectos por etapa SIPOC"
         description="Arrastra los contratos entre columnas para mover su etapa, o haz clic para editar."
         actions={
           <Button onClick={openNew} size="sm" className="gap-1.5">
