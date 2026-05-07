@@ -167,7 +167,7 @@ const Dashboard = () => {
       <div className="space-y-8 px-6 py-8 md:px-10 md:py-10">
         {/* KPIs */}
         <div className="grid gap-4 md:grid-cols-4">
-          <Stat label="Sub Contratos activos" value={contratosActivosCount}
+          <Stat label="Proyectos activos" value={contratosActivosCount}
             sub={`de ${contratos.length} totales · SIPOC 3-5`} icon={Briefcase} onClick={() => setDetail("contratos")} />
           <Stat label="Sub Proyectos en curso" value={proyectosEnCursoCount}
             sub={`${proyectos.length} totales`} icon={TrendingUp} onClick={() => setDetail("enCurso")} />
