@@ -1,0 +1,1 @@
+ALTER TABLE public.progreso ADD COLUMN riesgo boolean NOT NULL DEFAULT false;

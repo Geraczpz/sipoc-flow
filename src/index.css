@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Torre de Control · Design System
+   Inspired by Impaktum: editorial, executive, near-monochrome with sage accent.
+   All colors HSL.
+*/
+
+@layer base {
+  :root {
+    /* Surfaces */
+    --background: 40 14% 96%;          /* off-white #F4F2EC-ish */
+    --foreground: 60 5% 8%;             /* near black */
+
+    --card: 0 0% 100%;
+    --card-foreground: 60 5% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 60 5% 8%;
+
+    /* Brand */
+    --primary: 60 5% 8%;                /* black */
+    --primary-foreground: 40 14% 96%;
+
+    --secondary: 40 10% 90%;
+    --secondary-foreground: 60 5% 12%;
+
+    --muted: 40 8% 92%;
+    --muted-foreground: 60 4% 38%;
+
+    --accent: 140 11% 60%;              /* sage */
+    --accent-foreground: 60 5% 8%;
+
+    --destructive: 8 70% 52%;
+    --destructive-foreground: 40 14% 96%;
+
+    --warning: 35 85% 52%;
+    --warning-foreground: 60 5% 8%;
+
+    --success: 145 40% 38%;
+    --success-foreground: 40 14% 96%;
+
+    --border: 40 8% 86%;
+    --input: 40 8% 86%;
+    --ring: 60 5% 25%;
+
+    --radius: 0.25rem;
+
+    /* Sidebar (dark) */
+    --sidebar-background: 60 5% 9%;
+    --sidebar-foreground: 40 10% 78%;
+    --sidebar-primary: 40 14% 96%;
+    --sidebar-primary-foreground: 60 5% 9%;
+    --sidebar-accent: 60 5% 14%;
+    --sidebar-accent-foreground: 40 14% 96%;
+    --sidebar-border: 60 5% 16%;
+    --sidebar-ring: 140 11% 60%;
+
+    /* Charts */
+    --chart-1: 60 5% 12%;
+    --chart-2: 140 11% 55%;
+    --chart-3: 35 70% 55%;
+    --chart-4: 8 60% 55%;
+    --chart-5: 200 30% 50%;
+  }
+
+  .dark {
+    --background: 60 5% 7%;
+    --foreground: 40 14% 94%;
+    --card: 60 5% 10%;
+    --card-foreground: 40 14% 94%;
+    --popover: 60 5% 10%;
+    --popover-foreground: 40 14% 94%;
+    --primary: 40 14% 94%;
+    --primary-foreground: 60 5% 8%;
+    --secondary: 60 5% 14%;
+    --secondary-foreground: 40 14% 94%;
+    --muted: 60 5% 14%;
+    --muted-foreground: 40 6% 60%;
+    --accent: 140 11% 50%;
+    --accent-foreground: 40 14% 94%;
+    --destructive: 8 60% 45%;
+    --destructive-foreground: 40 14% 94%;
+    --border: 60 5% 18%;
+    --input: 60 5% 18%;
+    --ring: 140 11% 50%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html, body, #root { @apply h-full; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  /* Brand mark used as a recurring motif (vertical lines from cover) */
+  .brand-bars {
+    background-image: repeating-linear-gradient(
+      to right,
+      hsl(var(--foreground) / 0.85) 0,
+      hsl(var(--foreground) / 0.85) 2px,
+      transparent 2px,
+      transparent 5px
+    );
+  }
+  .brand-bars-light {
+    background-image: repeating-linear-gradient(
+      to right,
+      hsl(var(--sidebar-foreground) / 0.6) 0,
+      hsl(var(--sidebar-foreground) / 0.6) 2px,
+      transparent 2px,
+      transparent 5px
+    );
+  }
+  .eyebrow {
+    @apply text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground;
+  }
+  .display {
+    font-family: 'Fraunces', 'Georgia', serif;
+    @apply tracking-tight;
+  }
+}
