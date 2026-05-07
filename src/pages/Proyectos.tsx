@@ -144,7 +144,7 @@ const Proyectos = () => {
     <div className="animate-fade-in">
       <PageHeader
         eyebrow="Portafolio"
-        title="Proyectos"
+        title="Sub Proyectos"
         description="Filtra por contrato, responsable o estatus. Cambia entre vista de lista y tablero según necesites detalle o panorama."
         actions={
           <div className="flex items-center gap-2">
@@ -159,7 +159,7 @@ const Proyectos = () => {
               </Button>
             </div>
             <Button onClick={openNew} size="sm" className="gap-1.5">
-              <Plus className="h-4 w-4" /> Nuevo proyecto
+              <Plus className="h-4 w-4" /> Nuevo sub proyecto
             </Button>
           </div>
         }
