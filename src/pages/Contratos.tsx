@@ -207,7 +207,7 @@ const Contratos = () => {
                   <DroppableColumn id={step.id} isOver={overCol === step.id}>
                     {items.length === 0 && (
                       <div className="rounded-sm border border-dashed border-border p-4 text-center text-xs text-muted-foreground">
-                        Sin contratos
+                        Sin proyectos
                       </div>
                     )}
                     {items.map((c) => (
