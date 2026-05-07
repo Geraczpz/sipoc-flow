@@ -44,7 +44,7 @@ const Progreso = () => {
   const mutation = useMutation({
     mutationFn: async () => {
       if (!user) throw new Error("No autenticado");
-      if (!proyectoId) throw new Error("Selecciona un proyecto");
+      if (!proyectoId) throw new Error("Selecciona un sub proyecto");
       if (riesgo && !bloqueadores.trim()) {
         throw new Error("Si marcas el registro en riesgo, debes describir los bloqueadores.");
       }
@@ -91,7 +91,7 @@ const Progreso = () => {
           <p className="mt-1 text-xs text-muted-foreground">
             {myProjects.length > 0
               ? `Tienes ${myProjects.length} proyectos asignados.`
-              : "Aún no tienes proyectos como owner — puedes registrar en cualquiera."}
+              : "Aún no tienes sub proyectos como owner — puedes registrar en cualquiera."}
           </p>
 
           <form
@@ -99,9 +99,9 @@ const Progreso = () => {
             className="mt-5 space-y-4"
           >
             <div>
-              <Label>Proyecto</Label>
+              <Label>Sub Proyecto</Label>
               <Select value={proyectoId} onValueChange={setProyectoId}>
-                <SelectTrigger className="mt-1.5"><SelectValue placeholder="Selecciona un proyecto" /></SelectTrigger>
+                <SelectTrigger className="mt-1.5"><SelectValue placeholder="Selecciona un sub proyecto" /></SelectTrigger>
                 <SelectContent>
                   {selectableProjects.map((p) => (
                     <SelectItem key={p.id} value={p.id}>{p.titulo}</SelectItem>
