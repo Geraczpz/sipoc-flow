@@ -145,7 +145,7 @@ const Proyectos = () => {
       <PageHeader
         eyebrow="Portafolio"
         title="Sub Proyectos"
-        description="Filtra por contrato, responsable o estatus. Cambia entre vista de lista y tablero según necesites detalle o panorama."
+        description="Filtra por proyecto, responsable o estatus. Cambia entre vista de lista y tablero según necesites detalle o panorama."
         actions={
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1 rounded-sm border border-border bg-card p-0.5">
@@ -169,7 +169,7 @@ const Proyectos = () => {
         {/* Filters */}
         <div className="mb-6 grid gap-3 md:grid-cols-3">
           <div>
-            <p className="eyebrow mb-1.5">Contrato</p>
+            <p className="eyebrow mb-1.5">Proyecto</p>
             <Select value={contratoFilter} onValueChange={setContratoFilter}>
               <SelectTrigger><SelectValue /></SelectTrigger>
               <SelectContent>
