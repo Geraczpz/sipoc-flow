@@ -103,12 +103,12 @@ export const ProyectoDialog = ({ open, onOpenChange, proyecto }: Props) => {
           <div className="flex max-h-[90vh] flex-col overflow-hidden">
             <div className="overflow-y-auto px-6 pt-6">
               <DialogHeader>
-                <p className="eyebrow">{isEdit ? "Editar proyecto" : "Nuevo proyecto"}</p>
+                <p className="eyebrow">{isEdit ? "Editar proyecto" : "Nuevo sub proyecto"}</p>
                 <DialogTitle className="display text-2xl">
-                  {isEdit ? proyecto?.titulo : "Crear proyecto"}
+                  {isEdit ? proyecto?.titulo : "Crear sub proyecto"}
                 </DialogTitle>
                 <DialogDescription>
-                  Define los datos del proyecto y asigna responsable y estatus.
+                  Define los datos del sub proyecto y asigna responsable y estatus.
                 </DialogDescription>
               </DialogHeader>
 
@@ -167,7 +167,7 @@ export const ProyectoDialog = ({ open, onOpenChange, proyecto }: Props) => {
             <DialogFooter className="border-t border-border bg-card px-6 py-4">
               <Button variant="outline" onClick={() => onOpenChange(false)}>Cancelar</Button>
               <Button onClick={() => mutation.mutate()} disabled={mutation.isPending || !titulo.trim()}>
-                {mutation.isPending ? "Guardando..." : isEdit ? "Guardar cambios" : "Crear proyecto"}
+                {mutation.isPending ? "Guardando..." : isEdit ? "Guardar cambios" : "Crear sub proyecto"}
               </Button>
             </DialogFooter>
           </div>
