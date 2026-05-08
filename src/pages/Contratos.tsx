@@ -175,7 +175,7 @@ const Contratos = () => {
         description="Arrastra los contratos entre columnas para mover su etapa, o haz clic para editar."
         actions={
           <Button onClick={openNew} size="sm" className="gap-1.5">
-            <Plus className="h-4 w-4" /> Nuevo contrato
+            <Plus className="h-4 w-4" /> Nuevo proyecto
           </Button>
         }
       />
