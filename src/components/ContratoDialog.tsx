@@ -166,12 +166,12 @@ export const ContratoDialog = ({ open, onOpenChange, contrato }: Props) => {
           <div className="flex max-h-[90vh] flex-col overflow-hidden">
             <div className="overflow-y-auto px-6 pt-6">
         <DialogHeader>
-          <p className="eyebrow">{isEdit ? "Editar contrato" : "Nuevo contrato"}</p>
+          <p className="eyebrow">{isEdit ? "Editar contrato" : "Nuevo proyecto"}</p>
           <DialogTitle className="display text-2xl">
-            {isEdit ? (contrato?.nombre_real || contrato?.titulo) : "Crear contrato"}
+            {isEdit ? (contrato?.nombre_real || contrato?.titulo) : "Crear proyecto"}
           </DialogTitle>
           <DialogDescription>
-            Define los datos del contrato y asocia los proyectos que lo componen.
+            Define los datos del proyecto y asocia los sub proyectos que lo componen.
           </DialogDescription>
         </DialogHeader>
 
@@ -234,19 +234,19 @@ export const ContratoDialog = ({ open, onOpenChange, contrato }: Props) => {
           {/* Avance promedio */}
           <div className="rounded-sm border border-border bg-muted/30 p-4">
             <div className="flex items-baseline justify-between">
-              <p className="eyebrow">Avance promedio del contrato</p>
+              <p className="eyebrow">Avance promedio del proyecto</p>
               <span className="font-display text-2xl tabular-nums">{avgPct}%</span>
             </div>
             <Progress value={avgPct} className="mt-2 h-1.5" />
             <p className="mt-2 text-[11px] text-muted-foreground">
-              Promedio del último % de progreso de {linkedProjects.length} proyecto(s) asociado(s).
+              Promedio del último % de progreso de {linkedProjects.length} sub proyecto(s) asociado(s).
             </p>
           </div>
 
           {/* Proyectos asociados */}
           <div>
             <div className="mb-2 flex items-center justify-between gap-2">
-              <Label>Proyectos asociados</Label>
+              <Label>Sub proyectos asociados</Label>
               <div className="flex items-center gap-2">
                 <Badge variant="outline">{selectedProjects.size} seleccionado(s)</Badge>
                 <Button
@@ -256,7 +256,7 @@ export const ContratoDialog = ({ open, onOpenChange, contrato }: Props) => {
                   className="h-7 gap-1 px-2 text-xs"
                   onClick={() => setQuickOpen(true)}
                 >
-                  <Plus className="h-3 w-3" /> Nuevo proyecto
+                  <Plus className="h-3 w-3" /> Nuevo sub proyecto
                 </Button>
               </div>
             </div>
@@ -266,7 +266,7 @@ export const ContratoDialog = ({ open, onOpenChange, contrato }: Props) => {
                 <table className="w-full text-xs">
                   <thead className="bg-muted/40 text-muted-foreground">
                     <tr>
-                      <th className="px-3 py-2 text-left font-normal">Proyecto</th>
+                      <th className="px-3 py-2 text-left font-normal">Sub proyecto</th>
                       <th className="px-3 py-2 text-left font-normal">Owner</th>
                       <th className="px-3 py-2 text-right font-normal">% Progreso</th>
                     </tr>
@@ -305,7 +305,7 @@ export const ContratoDialog = ({ open, onOpenChange, contrato }: Props) => {
                 </label>
               ))}
               {proyectos.length === 0 && (
-                <p className="p-2 text-xs text-muted-foreground">Sin proyectos disponibles.</p>
+                <p className="p-2 text-xs text-muted-foreground">Sin sub proyectos disponibles.</p>
               )}
             </div>
           </div>
@@ -315,7 +315,7 @@ export const ContratoDialog = ({ open, onOpenChange, contrato }: Props) => {
             <DialogFooter className="border-t border-border bg-card px-6 py-4">
               <Button variant="outline" onClick={() => onOpenChange(false)}>Cancelar</Button>
               <Button onClick={() => mutation.mutate()} disabled={mutation.isPending || !titulo.trim()}>
-                {mutation.isPending ? "Guardando..." : isEdit ? "Guardar cambios" : "Crear contrato"}
+                {mutation.isPending ? "Guardando..." : isEdit ? "Guardar cambios" : "Crear proyecto"}
               </Button>
             </DialogFooter>
           </div>
@@ -336,7 +336,7 @@ export const ContratoDialog = ({ open, onOpenChange, contrato }: Props) => {
               <div className="flex-1 overflow-y-auto px-5 py-4">
                 {history.length === 0 && (
                   <p className="text-xs text-muted-foreground">
-                    Sin registros aún para los proyectos asociados.
+                    Sin registros aún para los sub proyectos asociados.
                   </p>
                 )}
 
