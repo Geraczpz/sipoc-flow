@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 
 const nav = [
   { to: "/", label: "Dashboard", icon: LayoutDashboard, end: true },
-  { to: "/contratos", label: "Contratos", icon: FileText },
-  { to: "/proyectos", label: "Proyectos", icon: FolderKanban },
+  { to: "/contratos", label: "Proyectos", icon: FileText },
+  { to: "/proyectos", label: "Sub Proyectos", icon: FolderKanban },
   { to: "/progreso", label: "Progreso", icon: LineChart },
 ];
 
