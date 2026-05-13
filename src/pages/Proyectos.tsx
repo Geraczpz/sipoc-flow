@@ -205,12 +205,12 @@ const Proyectos = () => {
             <Table>
               <TableHeader>
                 <TableRow className="bg-muted/30 hover:bg-muted/30">
-                  <TableHead className="w-[28%]">Proyecto</TableHead>
+                  <TableHead className="w-[28%]">Tareas</TableHead>
                   <TableHead>Responsable</TableHead>
                   <TableHead>Estatus</TableHead>
                   <TableHead className="w-[180px]">Avance</TableHead>
                   <TableHead>Periodo</TableHead>
-                  <TableHead>Contratos</TableHead>
+                  <TableHead>Pryoecto</TableHead>
                   <TableHead className="text-right">Riesgo</TableHead>
                 </TableRow>
               </TableHeader>
