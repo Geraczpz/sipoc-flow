@@ -144,7 +144,7 @@ const Proyectos = () => {
     <div className="animate-fade-in">
       <PageHeader
         eyebrow="Portafolio"
-        title="Sub Proyectos"
+        title="Tareas"
         description="Filtra por proyecto, responsable o estatus. Cambia entre vista de lista y tablero según necesites detalle o panorama."
         actions={
           <div className="flex items-center gap-2">
